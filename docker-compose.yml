@@ -1,0 +1,12 @@
+﻿services:
+  webapplication1:
+    image: webapplication1
+    build:
+      context: .
+      dockerfile: WebApplication1/Dockerfile
+
+  blog.web:
+    image: blog.web
+    build:
+      context: .
+      dockerfile: Blog.Web/Dockerfile
