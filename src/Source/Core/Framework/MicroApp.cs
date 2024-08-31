@@ -1,7 +1,9 @@
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Builder;
 
 namespace Core.Framework;
 
+[SuppressMessage("ReSharper", "UnusedMethodReturnValue.Global")]
 public class MicroApp(string[] args)
 {
     private readonly List<Action<WebApplication>> appActions = [];

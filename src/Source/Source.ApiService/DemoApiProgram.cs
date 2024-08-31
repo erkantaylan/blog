@@ -16,7 +16,7 @@ internal static class DemoApiProgram
         micro.RegisterTransient(Assembly.GetExecutingAssembly());
 
         micro.Register(
-            builder => { },
+            _ => { },
             app =>
             {
                 app.MapGet(
