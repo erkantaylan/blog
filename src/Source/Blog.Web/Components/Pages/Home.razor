@@ -2,6 +2,69 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<body>
+<div class="retro-container">
+    <h1>🌟 My Cool Homepage 🌟</h1>
 
-Welcome to your new app.
+    <div class="about-me">
+        <marquee>Welcome to my first Blazor website!</marquee>
+    </div>
+
+    <h2>📝 Blog Posts</h2>
+
+    <div class="blog-entry">
+        <h3>Dad Jokes</h3>
+        <div class="date">January 1, 2025</div>
+        <a href="/blog/dad-jokes">Read</a>
+    </div>
+    @* *@
+    @* <div class="blog-entry"> *@
+    @*     <h3>Learning Components</h3> *@
+    @*     <div class="date">December 31, 2024</div> *@
+    @*     <p>Today I learned how to make Blazor components. So cool!</p> *@
+    @*     <a href="/blog/components">Read more...</a> *@
+    @* </div> *@
+
+</div>
+</body>
+
+<style>
+    .retro-container {
+        font-family: "Comic Sans MS", cursive;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffcc;
+    }
+
+    h1 {
+        text-align: center;
+        color: purple;
+    }
+
+    .blog-entry {
+        border: 2px dashed blue;
+        margin: 20px 0;
+        padding: 15px;
+        background-color: white;
+    }
+
+    .date {
+        color: green;
+        font-weight: bold;
+    }
+
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+
+    a:visited {
+        color: purple;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 30px;
+    }
+</style>

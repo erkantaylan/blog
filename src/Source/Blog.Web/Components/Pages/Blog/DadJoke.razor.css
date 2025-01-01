@@ -1,0 +1,33 @@
+﻿.dad-joke-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 600px;
+}
+
+.joke-setup {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.joke-punchline {
+    font-size: 1.1rem;
+    color: #0066cc;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.reveal-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reveal-button:hover {
+    background-color: #218838;
+}

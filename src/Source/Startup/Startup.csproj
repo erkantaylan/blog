@@ -9,8 +9,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Blog.Web\Blog.Web.csproj" />
-        <ProjectReference Include="..\Source.ApiService\Source.ApiService.csproj"/>
-        <ProjectReference Include="..\Source.Web\Source.Web.csproj" />
     </ItemGroup>
 
     <ItemGroup>

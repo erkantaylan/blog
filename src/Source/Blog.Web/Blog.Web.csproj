@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>aspnet-Blog.Web-8cadf678-27e0-4196-acde-e86c5f2290b2</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
     
     <ItemGroup>
@@ -28,6 +29,12 @@
         <Compile Include="..\Shared\MigrateDbContextExtensions.cs">
             <Link>Shared\MigrateDbContextExtensions.cs</Link>
         </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
 </Project>

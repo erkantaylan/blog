@@ -1,0 +1,34 @@
+﻿<div class="dad-joke-container">
+    <div class="joke-setup">
+        @Setup
+    </div>
+
+    @if (showPunchline)
+    {
+        <div class="joke-punchline">
+            @Punchline
+        </div>
+    }
+    else
+    {
+        <button class="reveal-button" @onclick="RevealPunchline">
+            Reveal Punchline
+        </button>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string Setup { get; set; } = "";
+
+    [Parameter]
+    public string Punchline { get; set; } = "";
+
+    private bool showPunchline;
+
+    private void RevealPunchline()
+    {
+        showPunchline = true;
+    }
+
+}

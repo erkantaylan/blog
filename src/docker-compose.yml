@@ -1,12 +1,45 @@
-﻿services:
-  webapplication1:
-    image: webapplication1
-    build:
-      context: .
-      dockerfile: WebApplication1/Dockerfile
+﻿volumes:
+  volume_blog:
 
+services:
   blog.web:
     image: blog.web
+    ports:
+      - "80:8080"
     build:
       context: .
-      dockerfile: Blog.Web/Dockerfile
+      dockerfile: Source/Blog.Web/Dockerfile
+    depends_on:
+      - db-blog
+    environment:
+      - SEQ_ENDPOINT
+      - OTEL_EXPORTER_OTLP_PROTOCOL
+      - OTEL_EXPORTER_OTLP_ENDPOINT
+
+  db-blog:
+    image: postgres:11
+    restart: always
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_NON_ROOT_USER
+      - POSTGRES_NON_ROOT_PASSWORD
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - volume_blog:/var/lib/postgresql/data
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}' ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL
+      - PGADMIN_DEFAULT_PASSWORD
+    volumes:
+      - volume_pgadmin:/var/lib/pgadmin
