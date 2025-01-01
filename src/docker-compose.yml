@@ -1,5 +1,8 @@
-﻿volumes:
+﻿name: blog
+
+volumes:
   volume_blog:
+  volume_pgadmin:
 
 services:
   blog.web:
