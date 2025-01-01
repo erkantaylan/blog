@@ -7,6 +7,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+COPY ["Directory.Packages.props", "Directory.Packages.props"]
 COPY ["Source/Blog.Web/Blog.Web.csproj", "Source/Blog.Web/"]
 COPY ["Source/Core/Core.csproj", "Source/Core/"]
 RUN dotnet restore "Source/Blog.Web/Blog.Web.csproj"
